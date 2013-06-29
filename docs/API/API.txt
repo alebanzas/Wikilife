@@ -1,0 +1,2 @@
+https://api.wikilife.org/oauth2/authorize?client_id=32UJ6R&response_type=token&redirect_uri=http:%2F%2Fwww.google.com
+
