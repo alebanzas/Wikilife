@@ -1,0 +1,7 @@
+http://www.mywindowsphone.net/137/background-task-on-windows-phone-have-a-limit
+
+http://social.msdn.microsoft.com/Search/en-US/windowsphone?query=background%20task&Refinement=184&ac=4#refinementChanges=117&pageNumber=1&showMore=false
+http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202942%28v=vs.105%29.aspx
+
+
+http://social.msdn.microsoft.com/forums/en-us/wpdevelop/thread/d117ebe8-0600-4d1d-bfde-042dd00edfd6
