@@ -1,0 +1,52 @@
+////////////////////////LOGIN//////////////////////////////////////////////////////////////////
+POST http://api.wikilife.org/1/account/validate.json HTTP/1.1
+Host: api.wikilife.org
+
+{"pin":"2020","user_name":"abanzas"}
+
+
+RESPONSE:
+{"status": "OK", "message": "Valid User", "user_id": "SX6EZB"}
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////REGISTRO////////////////////////////////////////////////////////////////
+POST http://api.wikilife.org/1/account/add.json HTTP/1.1
+Host: api.wikilife.org
+
+{"city":"Buenos Aires","timezone":"America/Buenos_Aires","weight":"70.0","device_id":"43fcf5703df2588c9860eb7a1d039c6f58729897","region":"Distrito Federal","birthdate":"1989-12-20","user_id":"","gender":"Male","pin":"2020","height":"1.82","country":"ARG","user_name":"alebanzas"}
+
+
+RESPONSE:
+{"status": 1, "create_utc": {"$date": 1372531049594}, "user_id": "8XKDGB", "pin": "2020", "auto": false, "_id": {"$oid": "51cf2969ed0eef03d0000018"}, "user_name": "alebanzas2"}
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////MENSAJE/////////////////////////////////////////////////////////////////
+POST http://api.wikilife.org/1/logs/add.json?feedback=true HTTP/1.1
+Host: api.wikilife.org
+
+[{"pk": 0, "model": "LogEntry", "fields": {"status": 1, "execute_time": "2013-06-15 23:27:49 -0300", "text": "Advil Tablet: Strength 200mg , Route Oral ;", "original_entry": 0, "root_slug": "healthcare", "user_id": "LYJTFC", "nodes": [{"node_id": 289502, "value": "200mg"}, {"node_id": 289504, "value": "Oral"}]}}]
+
+
+RESPONSE:
+OK
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////MENSAJE LIBRE////////////////////////////////////////////////////////////
+POST http://api.wikilife.org/1/logs/add.json?feedback=true HTTP/1.1
+Host: api.wikilife.org
+
+[{"pk": 0, "model": "LogEntry", "fields": {"status": 1, "execute_time": "2013-06-15 23:17:06 -0300", "text": "Probando mensaje libre", "original_entry": 0, "root_slug": "journal", "user_id": "SX6EZB", "nodes": []}}]
+
+
+RESPONSE:
+OK
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
