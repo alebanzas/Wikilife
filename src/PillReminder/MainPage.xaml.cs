@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
 namespace PillReminder
@@ -19,6 +10,21 @@ namespace PillReminder
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/Account/Register.xaml", UriKind.Relative));
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/Account/Login.xaml", UriKind.Relative));
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: logout
         }
     }
 }
