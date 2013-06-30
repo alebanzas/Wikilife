@@ -27,7 +27,13 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <StackPanel x:Name="ContentPanel" Grid.Row="1">
+            <TextBlock TextWrapping="Wrap" Text="Usename"/>
+            <TextBox TextWrapping="Wrap" x:Name="TxtUsename" />
+            <TextBlock TextWrapping="Wrap" Text="PIN"/>
+            <TextBox TextWrapping="Wrap" x:Name="TxtPIN" InputScope="Number" />
+            <Button Content="LOGIN" x:Name="BtnSend" Click="Login_Click"/>
+            <TextBlock TextWrapping="Wrap" x:Name="LblResult" Foreground="Red" />
 
         </StackPanel>
     </Grid>
