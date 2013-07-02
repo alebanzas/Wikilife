@@ -15,7 +15,21 @@ RESPONSE:
 POST http://api.wikilife.org/1/account/add.json HTTP/1.1
 Host: api.wikilife.org
 
-{"city":"Buenos Aires","timezone":"America/Buenos_Aires","weight":"70.0","device_id":"43fcf5703df2588c9860eb7a1d039c6f58729897","region":"Distrito Federal","birthdate":"1989-12-20","user_id":"","gender":"Male","pin":"2020","height":"1.82","country":"ARG","user_name":"alebanzas"}
+{"timezone":"GMT","weight":"70.0","device_id":"43fcf5703df2588c9860eb7a1d039c6f58729897","birthdate":"1989-12-20","user_id":"","gender":"Male","pin":"2020","height":"1.82","country":"USA","user_name":"alebanzas6"}
+
+
+{
+"timezone":"GMT",
+"weight":"70.0",
+"device_id":"43fcf5703df2588c9860eb7a1d039c6f58729897",
+"birthdate":"1989-12-20",
+"user_id":"",
+"gender":"Male",
+"pin":"2020",
+"height":"1.82",
+"country":"USA",
+"user_name":"alebanzas6"
+}
 
 
 RESPONSE:
