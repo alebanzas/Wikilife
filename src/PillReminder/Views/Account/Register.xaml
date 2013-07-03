@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -28,7 +29,25 @@
 
         <!--ContentPanel - place additional content here-->
         <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+            <ScrollViewer Height="600">
+                <StackPanel>
+                    <TextBlock Text="User name"></TextBlock>
+                    <TextBox x:Name="TxtUserName"></TextBox>
+                    <TextBlock Text="PIN"></TextBlock>
+                    <TextBox x:Name="TxtPIN"></TextBox>
+                    <TextBlock Text="Height"></TextBlock>
+                    <TextBox x:Name="TxtHeight"></TextBox>
+                    <TextBlock Text="Weight"></TextBlock>
+                    <TextBox x:Name="TxtWeight"></TextBox>
+                    <toolkit:ListPicker Header="Gender">
+                        <ComboBoxItem>Male</ComboBoxItem>
+                        <ComboBoxItem>Female</ComboBoxItem>
+                    </toolkit:ListPicker>
+                    <TextBlock Text="Birthdate"></TextBlock>
+                    <toolkit:DatePicker Name="TxtBirthDate"></toolkit:DatePicker>
+                    <Button>REGISTER</Button>
+                </StackPanel>
+            </ScrollViewer>
         </StackPanel>
     </Grid>
 
