@@ -96,13 +96,13 @@ namespace PillReminder.Views.Account
 
         private void ProcessResult(RegisterResponseModel result)
         {
-            if ("OK".Equals(result.status))
+            if ("1".Equals(result.status))
             {
                 Dispatcher.BeginInvoke(() => NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative)));
             }
             else
             {
-                Dispatcher.BeginInvoke(() => Dispatcher.BeginInvoke(() => MessageBox.Show("Ocurrió un error.")));
+                Dispatcher.BeginInvoke(() => Dispatcher.BeginInvoke(() => MessageBox.Show("Ocurrió un error:" + result.message)));
             }
         }
     }
@@ -137,6 +137,8 @@ namespace PillReminder.Views.Account
 
     public class RegisterResponseModel
     {
+        public string message { get; set; }
+
         public string status { get; set; }
 
         public DateModel create_utc { get; set; }
