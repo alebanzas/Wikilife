@@ -3,7 +3,6 @@ using System.IO;
 using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text;
-using System.Windows.Controls;
 using Microsoft.Phone.Controls;
 
 namespace PillReminder.Views.Account
@@ -11,9 +10,7 @@ namespace PillReminder.Views.Account
     public partial class Login : PhoneApplicationPage
     {
         public string LoginURL = "http://api.wikilife.org/1/account/validate.json";
-
-        public string UserName { get; set; }
-        public string PIN { get; set; }
+        public LoginRequestModel RequestModel { get; set; }
 
         public Login()
         {
@@ -41,12 +38,15 @@ namespace PillReminder.Views.Account
         {
             StartRequest();
 
-            UserName = TxtUsename.Text;
-            PIN = TxtPIN.Text;
+            RequestModel = new LoginRequestModel
+                {
+                    pin = TxtPIN.Text,
+                    user_name = TxtUsename.Text,
+                };
 
             var webRequest = WebRequest.CreateHttp(LoginURL);
             webRequest.Method = "POST"; 
-            webRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallback), webRequest);
+            webRequest.BeginGetRequestStream(GetRequestStreamCallback, webRequest);
         }
 
         private void GetRequestStreamCallback(IAsyncResult asynchronousResult)
@@ -67,8 +67,8 @@ namespace PillReminder.Views.Account
         {
             var user = new LoginRequestModel
                 {
-                    user_name = UserName,
-                    pin = PIN,
+                    user_name = RequestModel.user_name,
+                    pin = RequestModel.pin,
                 };
 
             var ms = new MemoryStream();
@@ -96,10 +96,7 @@ namespace PillReminder.Views.Account
         {
             if ("OK".Equals(result.status))
             {
-                Dispatcher.BeginInvoke(() =>
-                {
-                    NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-                });
+                Dispatcher.BeginInvoke(() => NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative)));
             }
             else
             {
