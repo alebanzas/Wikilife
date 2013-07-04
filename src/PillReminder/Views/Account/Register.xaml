@@ -45,7 +45,7 @@
                     </toolkit:ListPicker>
                     <TextBlock Text="Birthdate"></TextBlock>
                     <toolkit:DatePicker Name="TxtBirthDate"></toolkit:DatePicker>
-                    <Button>REGISTER</Button>
+                    <Button x:Name="BtnSend" Click="Register_Click">REGISTER</Button>
                 </StackPanel>
             </ScrollViewer>
         </StackPanel>
