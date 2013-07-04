@@ -29,3 +29,4 @@ _ReSharper*/
 [Bb]ld
 *.orig
 Thumbs.db
+src/PillReminder/packages/*
